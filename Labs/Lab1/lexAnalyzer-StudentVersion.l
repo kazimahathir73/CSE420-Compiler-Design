@@ -28,9 +28,9 @@ digit	 [0-9]
 /* write regular expressions for id, float and integers */
 id		 {letter_}({letter_}|{digit})* 
 
-integer	 {digit}+
+integers	 {digit}+
 
-float    {digit}+"."{digit}+
+float    {digit}*\.{digit}+ | {digit}*\.{digit}+(E[-+]?{digit}+)?
 
 %%
 
@@ -40,98 +40,82 @@ float    {digit}+"."{digit}+
 			lines++;
 		}
 
-{id} {
-			loglist="Line no "+to_string(lines)+": Token <ID> Lexeme "+yytext+" found"+"\n"+"\n";
-			yyoutlog<<loglist;
-		}
-
-{integer} {
-			loglist = "Line no " + to_string(lines) + ": Token <INTEGER> Lexeme " + yytext + "\n";
-			yyoutlog << loglist;
-		}
-
-{float} {
-			loglist = "Line no " + to_string(lines) + ": Token <FLOAT> Lexeme " + yytext + "\n";
-			yyoutlog << loglist;
-		}
-
-if {
+"if" {
 			loglist="Line no "+to_string(lines)+": Token <IF> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
 		}
 
-else {
+"else" {
 			loglist="Line no "+to_string(lines)+": Token <ELSE> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
 		}
 
-for {
+"for" {
 			loglist="Line no "+to_string(lines)+": Token <FOR> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
 		}
 
-do {
+"do" {
 			loglist="Line no "+to_string(lines)+": Token <DO> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
 		}
 
-break {
+"break" {
 			loglist="Line no "+to_string(lines)+": Token <BREAK> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
 		}
 
-return {
+"return" {
 			loglist="Line no "+to_string(lines)+": Token <RETURN> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
 		}
 
-switch {
+"switch" {
 			loglist="Line no "+to_string(lines)+": Token <SWITCH> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
 		}
 
-case {
+"case" {
 			loglist="Line no "+to_string(lines)+": Token <CASE> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
 		}
 
-default {
+"default" {
 			loglist="Line no "+to_string(lines)+": Token <DEAFULT> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
 		}
 	
-continue {
+"continue" {
 			loglist="Line no "+to_string(lines)+": Token <CONTINUE> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
 		}
 
-goto {
+"goto" {
 			loglist="Line no "+to_string(lines)+": Token <GOTO> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
 		}
 
-printf {
+"printf" {
 			loglist="Line no "+to_string(lines)+": Token <PRINTF> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
 		}
 
-char {
+"char" {
 			loglist="Line no "+to_string(lines)+": Token <CHAR> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
 		}
 
-void {
+"void" {
 			loglist="Line no "+to_string(lines)+": Token <VOID> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
 		}
 
-double {
+"double" {
 			loglist="Line no "+to_string(lines)+": Token <DOUBLE> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
 		}
 
-
-while {
+"while" {
 			loglist="Line no "+to_string(lines)+": Token <WHILE> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
 		}
@@ -216,6 +200,21 @@ while {
 			yyoutlog<<loglist;
 		}
 
+{integers} {
+			loglist = "Line no " + to_string(lines) + ": Token <INTEGER> Lexeme " + yytext + "\n";
+			yyoutlog << loglist;
+		}
+
+{float} {
+			loglist = "Line no " + to_string(lines) + ": Token <FLOAT> Lexeme " + yytext + "\n";
+			yyoutlog << loglist;
+		}
+
+{id} {
+			loglist="Line no "+to_string(lines)+": Token <ID> Lexeme "+yytext+" found"+"\n"+"\n";
+			yyoutlog<<loglist;
+		}
+
 
 %%
 
@@ -234,12 +233,15 @@ int main(int argc, char *argv[])
 	
 	if(yyin == NULL) // file does not exist
 	{
-		// print error message and exit
+		cout<<"error"<<endl;
+		return 0;
 	}
 	
 	yylex(); // start reading the input file in a loop
 	
-	//print total number of lines found in the input file
+	loglist = "Total lines:"+to_string(lines)+"\n";
+	
+	yyoutlog<<loglist;
 	
 	yyoutlog.close();  // close the log file
 	
