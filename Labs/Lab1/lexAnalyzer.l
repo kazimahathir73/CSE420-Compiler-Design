@@ -22,7 +22,7 @@ ws		 {delim}+
 
 newline  \n
 
-letter_	 [A-Za-z_]
+letter_	 [a-zA-Z_]
 digit	 [0-9]
 
 /* write regular expressions for id, float and integers */
@@ -30,7 +30,7 @@ id		 {letter_}({letter_}|{digit})*
 
 integers	 {digit}+
 
-float    {digit}*\.{digit}+ | {digit}*\.{digit}+(E[-+]?{digit}+)?
+float    ({digit}*\.{digit}+)(E[-+]?{digit}+)?
 
 %%
 

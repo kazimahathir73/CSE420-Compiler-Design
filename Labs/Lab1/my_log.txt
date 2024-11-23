@@ -1,10 +1,10 @@
-Line no 1: Token <INT> Lexeme int found
+Line no 1: Token <ID> Lexeme int found
 
 Line no 1: Token <ID> Lexeme func found
 
 Line no 1: Token <LPAREN> Lexeme ( found
 
-Line no 1: Token <INT> Lexeme int found
+Line no 1: Token <ID> Lexeme int found
 
 Line no 1: Token <ID> Lexeme var1 found
 
@@ -14,7 +14,7 @@ Line no 1: Token <RTHIRD> Lexeme ] found
 
 Line no 1: Token <COMMA> Lexeme , found
 
-Line no 1: Token <FLOAT> Lexeme float found
+Line no 1: Token <ID> Lexeme float found
 
 Line no 1: Token <ID> Lexeme var3 found
 
@@ -22,53 +22,55 @@ Line no 1: Token <RPAREN> Lexeme ) found
 
 Line no 2: Token <LCURL> Lexeme { found
 
-Line no 3: Token <INT> Lexeme int found
+Line no 3: Token <ID> Lexeme int found
 
 Line no 3: Token <ID> Lexeme a found
 
 Line no 3: Token <ASSIGNOP> Lexeme = found
 
-Line no 3: Token <CONST_INT> Lexeme 10 found
-
+Line no 3: Token <INTEGER> Lexeme 10
 Line no 3: Token <SEMICOLON> Lexeme ; found
 
-Line no 4: Token <FLOAT> Lexeme float found
+Line no 4: Token <ID> Lexeme float found
 
 Line no 4: Token <ID> Lexeme b found
 
 Line no 4: Token <ASSIGNOP> Lexeme = found
 
-Line no 4: Token <CONST_FLOAT> Lexeme 1.56 found
-
+Line no 4: Token <FLOAT> Lexeme 1.56
 Line no 4: Token <SEMICOLON> Lexeme ; found
 
-Line no 5: Token <FLOAT> Lexeme float found
+Line no 5: Token <ID> Lexeme float found
 
 Line no 5: Token <ID> Lexeme c found
 
 Line no 5: Token <ASSIGNOP> Lexeme = found
 
-Line no 5: Token <CONST_FLOAT> Lexeme 1.56e-4 found
+Line no 5: Token <FLOAT> Lexeme 1.56
+Line no 5: Token <ID> Lexeme e found
 
+Line no 5: Token <ADDOP> Lexeme - found
+
+Line no 5: Token <INTEGER> Lexeme 4
 Line no 5: Token <SEMICOLON> Lexeme ; found
 
-Line no 6: Token <FLOAT> Lexeme float found
+Line no 6: Token <ID> Lexeme float found
 
 Line no 6: Token <ID> Lexeme d found
 
 Line no 6: Token <ASSIGNOP> Lexeme = found
 
-Line no 6: Token <CONST_FLOAT> Lexeme 0.56 found
-
+Line no 6: Token <FLOAT> Lexeme 0.56
 Line no 6: Token <SEMICOLON> Lexeme ; found
 
-Line no 7: Token <FLOAT> Lexeme float found
+Line no 7: Token <ID> Lexeme float found
 
 Line no 7: Token <ID> Lexeme e found
 
 Line no 7: Token <ASSIGNOP> Lexeme = found
 
-Line no 7: Token <CONST_FLOAT> Lexeme 0.56e5 found
+Line no 7: Token <FLOAT> Lexeme 0.56
+Line no 7: Token <ID> Lexeme e5 found
 
 Line no 7: Token <SEMICOLON> Lexeme ; found
 
@@ -78,7 +80,7 @@ Line no 9: Token <LPAREN> Lexeme ( found
 
 Line no 9: Token <ID> Lexeme a found
 
-Line no 9: Token <RELOP> Lexeme > found
+Line no 9: Token <REOP> Lexeme > found
 
 Line no 9: Token <ID> Lexeme b found
 
@@ -106,7 +108,7 @@ Line no 13: Token <LPAREN> Lexeme ( found
 
 Line no 13: Token <ID> Lexeme c found
 
-Line no 13: Token <RELOP> Lexeme < found
+Line no 13: Token <REOP> Lexeme < found
 
 Line no 13: Token <ID> Lexeme d found
 
@@ -148,10 +150,9 @@ Line no 22: Token <LPAREN> Lexeme ( found
 
 Line no 22: Token <ID> Lexeme a found
 
-Line no 22: Token <RELOP> Lexeme <= found
+Line no 22: Token <REOP> Lexeme <= found
 
-Line no 22: Token <CONST_INT> Lexeme 13 found
-
+Line no 22: Token <INTEGER> Lexeme 13
 Line no 22: Token <RPAREN> Lexeme ) found
 
 Line no 23: Token <LCURL> Lexeme { found
@@ -168,7 +169,7 @@ Line no 24: Token <SEMICOLON> Lexeme ; found
 
 Line no 25: Token <ID> Lexeme a found
 
-Line no 25: Token <INCOP> Lexeme ++ found
+Line no 25: Token <INOP> Lexeme ++ found
 
 Line no 25: Token <SEMICOLON> Lexeme ; found
 
@@ -176,11 +177,9 @@ Line no 26: Token <RCURL> Lexeme } found
 
 Line no 28: Token <RETURN> Lexeme return found
 
-Line no 28: Token <CONST_INT> Lexeme 0 found
-
+Line no 28: Token <INTEGER> Lexeme 0
 Line no 28: Token <SEMICOLON> Lexeme ; found
 
 Line no 29: Token <RCURL> Lexeme } found
 
-
-Total lines: 29
+Total lines:29
