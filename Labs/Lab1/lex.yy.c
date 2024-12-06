@@ -435,9 +435,9 @@ static char *yy_last_accepting_cpos;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "lexAnalyzer.l"
+#line 1 "lex_group8.l"
 #define INITIAL 0
-#line 4 "lexAnalyzer.l"
+#line 4 "lex_group8.l"
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -602,7 +602,7 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 35 "lexAnalyzer.l"
+#line 35 "lex_group8.l"
 
 
 #line 609 "lex.yy.c"
@@ -690,19 +690,19 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 37 "lexAnalyzer.l"
+#line 37 "lex_group8.l"
 { /* ignore whitespace */ }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 39 "lexAnalyzer.l"
+#line 39 "lex_group8.l"
 {
 			lines++;
 		}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 43 "lexAnalyzer.l"
+#line 43 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <IF> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -710,7 +710,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 48 "lexAnalyzer.l"
+#line 48 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <ELSE> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -718,7 +718,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 53 "lexAnalyzer.l"
+#line 53 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <FOR> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -726,7 +726,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 58 "lexAnalyzer.l"
+#line 58 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <DO> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -734,7 +734,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 63 "lexAnalyzer.l"
+#line 63 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <BREAK> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -742,7 +742,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 68 "lexAnalyzer.l"
+#line 68 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <RETURN> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -750,7 +750,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 73 "lexAnalyzer.l"
+#line 73 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <SWITCH> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -758,7 +758,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 78 "lexAnalyzer.l"
+#line 78 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <CASE> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -766,7 +766,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 83 "lexAnalyzer.l"
+#line 83 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <DEAFULT> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -774,7 +774,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 88 "lexAnalyzer.l"
+#line 88 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <CONTINUE> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -782,7 +782,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 93 "lexAnalyzer.l"
+#line 93 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <GOTO> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -790,7 +790,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 98 "lexAnalyzer.l"
+#line 98 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <PRINTF> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -798,7 +798,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 103 "lexAnalyzer.l"
+#line 103 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <CHAR> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -806,7 +806,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 108 "lexAnalyzer.l"
+#line 108 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <VOID> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -814,7 +814,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 113 "lexAnalyzer.l"
+#line 113 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <DOUBLE> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -822,7 +822,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 118 "lexAnalyzer.l"
+#line 118 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <WHILE> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -830,7 +830,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 123 "lexAnalyzer.l"
+#line 123 "lex_group8.l"
 { /* to match two same operators use | */
 			loglist="Line no "+to_string(lines)+": Token <ADDOP> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -838,7 +838,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 128 "lexAnalyzer.l"
+#line 128 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <MULOP> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -846,7 +846,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 133 "lexAnalyzer.l"
+#line 133 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <INOP> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -854,7 +854,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 138 "lexAnalyzer.l"
+#line 138 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <REOP> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -862,7 +862,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 143 "lexAnalyzer.l"
+#line 143 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <ASSIGNOP> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -870,7 +870,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 148 "lexAnalyzer.l"
+#line 148 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <LOGICOP> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -878,7 +878,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 153 "lexAnalyzer.l"
+#line 153 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <NOT> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -886,7 +886,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 158 "lexAnalyzer.l"
+#line 158 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <LPAREN> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -894,7 +894,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 163 "lexAnalyzer.l"
+#line 163 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <RPAREN> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -902,7 +902,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 168 "lexAnalyzer.l"
+#line 168 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <LCURL> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -910,7 +910,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 173 "lexAnalyzer.l"
+#line 173 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <RCURL> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -918,7 +918,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 178 "lexAnalyzer.l"
+#line 178 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <LTHIRD> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -926,7 +926,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 183 "lexAnalyzer.l"
+#line 183 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <RTHIRD> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -934,7 +934,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 188 "lexAnalyzer.l"
+#line 188 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <COMMA> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -942,7 +942,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 193 "lexAnalyzer.l"
+#line 193 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <COLON> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -950,7 +950,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 198 "lexAnalyzer.l"
+#line 198 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <SEMICOLON> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -958,7 +958,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 203 "lexAnalyzer.l"
+#line 203 "lex_group8.l"
 {
 			loglist = "Line no " + to_string(lines) + ": Token <INTEGER> Lexeme " + yytext + "\n";
 			yyoutlog << loglist;
@@ -966,7 +966,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 208 "lexAnalyzer.l"
+#line 208 "lex_group8.l"
 {
 			loglist = "Line no " + to_string(lines) + ": Token <FLOAT> Lexeme " + yytext + "\n";
 			yyoutlog << loglist;
@@ -974,7 +974,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 213 "lexAnalyzer.l"
+#line 213 "lex_group8.l"
 {
 			loglist="Line no "+to_string(lines)+": Token <ID> Lexeme "+yytext+" found"+"\n"+"\n";
 			yyoutlog<<loglist;
@@ -982,7 +982,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 219 "lexAnalyzer.l"
+#line 219 "lex_group8.l"
 ECHO;
 	YY_BREAK
 #line 989 "lex.yy.c"
@@ -1871,7 +1871,7 @@ int main()
 	return 0;
 	}
 #endif
-#line 219 "lexAnalyzer.l"
+#line 219 "lex_group8.l"
 
 
 int main(int argc, char *argv[])
@@ -1885,7 +1885,7 @@ int main(int argc, char *argv[])
 
 	yyin = fopen(argv[1], "r"); //the file to be read must be assigned to yyin
 
-	yyoutlog.open("my_log.txt", ios::trunc); // remember to rename the log file as mentioned in the spec
+	yyoutlog.open("output_group8.txt", ios::trunc); // remember to rename the log file as mentioned in the spec
 	
 	if(yyin == NULL) // file does not exist
 	{

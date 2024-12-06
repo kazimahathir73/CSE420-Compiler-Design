@@ -229,7 +229,7 @@ int main(int argc, char *argv[])
 
 	yyin = fopen(argv[1], "r"); //the file to be read must be assigned to yyin
 
-	yyoutlog.open("my_log.txt", ios::trunc); // remember to rename the log file as mentioned in the spec
+	yyoutlog.open("output_group8.txt", ios::trunc); // remember to rename the log file as mentioned in the spec
 	
 	if(yyin == NULL) // file does not exist
 	{
