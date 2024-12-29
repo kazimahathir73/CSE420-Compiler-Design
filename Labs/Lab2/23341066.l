@@ -87,6 +87,11 @@ printf      { return PRINTLN; }
 ";"        { return SEMICOLON; }
 ","        { return COMMA; }
 
+{id}       {
+                symbol_info *s = new symbol_info((string)yytext,"ID");
+                yylval = (YYSTYPE)s;
+                return ID;
+            }
 {integers} {
                 symbol_info *s = new symbol_info((string)yytext,"INT");
                 yylval = (YYSTYPE)s;
@@ -96,10 +101,4 @@ printf      { return PRINTLN; }
                 symbol_info *s = new symbol_info((string)yytext,"FLOAT");
                 yylval = (YYSTYPE)s;
                 return CONST_FLOAT;
-            }
-
-{id}       {
-                symbol_info *s = new symbol_info((string)yytext,"ID");
-                yylval = (YYSTYPE)s;
-                return ID;
             }
