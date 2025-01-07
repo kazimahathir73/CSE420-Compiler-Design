@@ -3,95 +3,79 @@
 class symbol_table
 {
 private:
+
     scope_table *current_scope;
+
     int bucket_count;
     int current_scope_id;
+    ofstream& outlog;
 
 public:
-    symbol_table(int bucket)
-    :bucket_count(bucket), current_scope_id(1)
-    {   
+    public: 
+ 
+    symbol_table(int bucket_count, ofstream& log_stream) 
+        : bucket_count(bucket_count), current_scope_id(0), outlog(log_stream) 
+    {
+        current_scope = new scope_table(bucket_count, ++current_scope_id, nullptr);
+        cout << "First ScopeTable with ID "<< current_scope->get_unique_id()<<" created"<<endl;
+        outlog << "First ScopeTable with ID " << current_scope->get_unique_id() << " created" << endl;
         
-        scope_table* new_scope_table = new scope_table(this->current_scope_id, nullptr, this->bucket_count);
-        this->current_scope = new_scope_table;
-
     }
+
    
+    void enter_scope() {
+    scope_table* new_scope = new scope_table(bucket_count, ++current_scope_id, current_scope); 
+    current_scope = new_scope; 
+    cout << "New ScopeTable with ID"<< current_scope->get_unique_id()<<" created"<<endl;
+    outlog << "New ScopeTable with ID " << current_scope->get_unique_id() << " created" << endl;
+    
+    
+    
+}
+
+
+    void exit_scope(){
+        if (current_scope == nullptr){
+            return;
+        }
+        cout << "ScopeTable with ID"<< current_scope->get_unique_id()<<" removed"<<endl;
+        outlog << "ScopeTable with ID " << current_scope->get_unique_id() << " removed" << endl;
+        scope_table* parent_scope = current_scope->get_parent_scope();
+        delete current_scope;
+
+        current_scope = parent_scope;   
+    }
+    
+
    
-    //~symbol_table();
+    bool insert(symbol_info* symbol) {
+        if (current_scope == nullptr) {
+           
+            return false;
+        }
 
-
-
-    void enter_scope(){
-        this->current_scope_id++;
-        scope_table* temp = this->current_scope;
-        scope_table* new_scope_table = new scope_table(this->current_scope_id, temp , this->bucket_count);
-        this->current_scope = new_scope_table;
+        return current_scope->insert_in_scope(symbol);
     }
-    void exit_scope(ofstream &outlog){
-        outlog<<"Scopetable with ID " << to_string(this->current_scope->get_unique_id())   << " removed"<<endl<<endl;
-        scope_table* temp = this->current_scope;
-        this->current_scope = this->current_scope->get_parent_scope();
-        delete temp;
-       
+    
+	
+    int getCurrentScopeID(){
+        return current_scope->get_unique_id();
     }
 
-
-    bool insert(symbol_info* symbol){
-        return this->current_scope->insert_in_scope(symbol);
-    }
-
-
-    bool insert_into_parent(symbol_info* symbol){
-        return this->current_scope->get_parent_scope()->insert_in_scope(symbol);
-    }
-
-    bool remove(symbol_info* symbol){
-        return this->current_scope->delete_from_scope(symbol);
-    }
-
-    symbol_info* lookup(symbol_info* symbol){
-        scope_table* temp = this->current_scope;
-        symbol_info* returned_pointer = NULL;
-
-        while(  (temp != nullptr)  || (temp != NULL)  ){
-
-            returned_pointer = temp->lookup_in_scope(symbol);
-            if ( (returned_pointer != nullptr)  && (returned_pointer != NULL) ){
-                break;
-            }
-
+   
+    
+ 
+    void print_all_scopes(ofstream& outlog){
+        outlog<<"################################"<<endl<<endl;
+        scope_table *temp = current_scope;
+        while (temp != NULL)
+        {   int id= temp->get_unique_id();
+            temp->print_scope_table(outlog,id);
             temp = temp->get_parent_scope();
         }
-        return returned_pointer;
+        outlog<<"################################"<<endl<<endl;
+    }
 
-    }
-    
-    
-    void print_current_scope(ofstream& outlog){
-        this->current_scope->print_scope_table(outlog);
-    }
-    void print_all_scopes(ofstream& outlog);
-
-    int get_id(){
-        return this->current_scope_id;
-    }
+};
 
     
-
-};    
-
-// complete the methods of symbol_table class
-
-
-void symbol_table::print_all_scopes(ofstream& outlog)
-{
-    outlog<<"################################"<<endl<<endl;
-    scope_table *temp = current_scope;
-    while (  (temp != NULL)  && (temp !=  nullptr)       )
-    {
-        temp->print_scope_table(outlog);
-        temp = temp->get_parent_scope();
-    }
-    outlog<<"################################"<<endl<<endl;
-}
